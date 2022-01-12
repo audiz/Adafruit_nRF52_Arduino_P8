@@ -3,6 +3,59 @@ menu.debug=Debug
 menu.debug_output=Debug Output
 
 # -----------------------------------
+# Adafruit Feather nRF52832 P8
+# -----------------------------------
+feather52832_p8.name=Adafruit Feather nRF52832 P8
+
+# VID/PID for Bootloader, Arduino & CircuitPython
+
+# Upload
+feather52832_p8.bootloader.tool=bootburn
+feather52832_p8.upload.tool=nrfutil
+feather52832_p8.upload.protocol=nrfutil
+feather52832_p8.upload.use_1200bps_touch=false
+feather52832_p8.upload.wait_for_upload_port=false
+feather52832.upload.native_usb=false
+feather52832_p8.upload.maximum_size=290816
+feather52832_p8.upload.maximum_data_size=52224
+
+# Build
+feather52832_p8.build.mcu=cortex-m4
+feather52832_p8.build.f_cpu=64000000
+feather52832_p8.build.board=NRF52832_FEATHER_P8
+feather52832_p8.build.core=nRF5
+feather52832_p8.build.variant=feather_nrf52832_p8
+feather52832_p8.build.usb_manufacturer="Adafruit"
+feather52832_p8.build.usb_product="Feather nRF52832 p8"
+feather52832_p8.build.extra_flags=-DNRF52832_XXAA -DNRF52
+feather52832_p8.build.ldscript=nrf52832_s132_v6.ld
+
+# SoftDevice Menu
+feather52832_p8.menu.softdevice.s132v6=S132 6.1.1
+feather52832_p8.menu.softdevice.s132v6.build.sd_name=s132
+feather52832_p8.menu.softdevice.s132v6.build.sd_version=6.1.1
+feather52832_p8.menu.softdevice.s132v6.build.sd_fwid=0x00B7
+
+# Debug Menu
+feather52832_p8.menu.debug.l0=Level 0 (Release)
+feather52832_p8.menu.debug.l0.build.debug_flags=-DCFG_DEBUG=0
+feather52832_p8.menu.debug.l1=Level 1 (Error Message)
+feather52832_p8.menu.debug.l1.build.debug_flags=-DCFG_DEBUG=1
+feather52832_p8.menu.debug.l2=Level 2 (Full Debug)
+feather52832_p8.menu.debug.l2.build.debug_flags=-DCFG_DEBUG=2
+feather52832_p8.menu.debug.l3=Level 3 (Segger SystemView)
+feather52832_p8.menu.debug.l3.build.debug_flags=-DCFG_DEBUG=3
+feather52832_p8.menu.debug.l3.build.sysview_flags=-DCFG_SYSVIEW=1
+
+# Debug Output Menu
+feather52832_p8.menu.debug_output.serial=Serial
+feather52832_p8.menu.debug_output.serial.build.logger_flags=-DCFG_LOGGER=0
+feather52832_p8.menu.debug_output.serial1=Serial1
+feather52832_p8.menu.debug_output.serial1.build.logger_flags=-DCFG_LOGGER=1 -DCFG_TUSB_DEBUG=CFG_DEBUG
+feather52832_p8.menu.debug_output.rtt=Segger RTT
+feather52832_p8.menu.debug_output.rtt.build.logger_flags=-DCFG_LOGGER=2 -DCFG_TUSB_DEBUG=CFG_DEBUG -DSEGGER_RTT_MODE_DEFAULT=SEGGER_RTT_MODE_BLOCK_IF_FIFO_FULL
+
+# -----------------------------------
 # Adafruit Feather nRF52832
 # -----------------------------------
 feather52832.name=Adafruit Feather nRF52832
